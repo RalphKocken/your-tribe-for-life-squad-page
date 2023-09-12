@@ -17,7 +17,11 @@ export const repositoryName = config.repositoryName;
 const routes = [
   {
     type: "creators",
-    path: "/",
+    path: "/creators",
+  },
+  {
+    type: "prisoners",
+    path: "/prisoners"
   }
 ];
 

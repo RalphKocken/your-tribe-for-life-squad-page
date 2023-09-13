@@ -40,5 +40,6 @@
         justify-content: center;
         align-items: center;
         gap: 4rem;
+        background-color: black;
     }
 </style>

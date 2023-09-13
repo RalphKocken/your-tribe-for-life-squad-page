@@ -5,7 +5,6 @@
 
     export let data
 
-
     //MOVE PRISONERS FUNCTION//
     let prisoners = data.list
     console.log(data.list)
@@ -24,12 +23,16 @@
       index = prisoners.length - 1;
     }
     };
-    </script>
+</script>
 
 <section>
-    <button on:click={previousPrisoner}><img src="/arrow-left.svg" alt="button to move to previous prisoner"></button>
+    <button on:click={previousPrisoner}>
+        <img src="/arrow-left.svg" alt="button to move to previous prisoner">
+    </button>
     {@html prismic.asHTML(prisoners[index].data.name)}
-    <button on:click={nextPrisoner}><img src="/arrow-right.svg" alt="button to move to next prisoner"></button>
+    <button on:click={nextPrisoner}>
+        <img src="/arrow-right.svg" alt="button to move to next prisoner">
+    </button>
 </section>
 
 <style>

@@ -9,11 +9,10 @@
 
 
 <section>
+  <!-- //for each loop svelte syntax// -->
   {#each members as member }
     {@html prismic.asHTML(member.data.name)}
-    <!-- <a href={member.data.link}>Visitekaartje</a> -->
   {/each}
-
   <button><a href="/prisoners">See other members</a></button>
 
 </section>

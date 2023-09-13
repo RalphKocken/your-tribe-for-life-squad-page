@@ -1,23 +1,3 @@
-<!-- <script>
-    import * as prismic from '@prismicio/client'
-    import { SliceZone } from '@prismicio/svelte'
-    import { components } from '$lib/slices'
-  
-    export let data
-    let members = data.list
-  </script> -->
-
-
-<!-- <section>
-  {#each members as member }
-    {@html prismic.asHTML(member.data.name)} -->
-    <!-- <a href={member.data.link}>Visitekaartje</a> -->
-  <!-- {/each}
-
-  <button><a href="/prisoners">See other</a></button>
-
-</section> -->
-
 <section>
   <button><a href="/creators">Do you want to continue?</a></button>
 </section>

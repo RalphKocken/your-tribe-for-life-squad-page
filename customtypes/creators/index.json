@@ -29,10 +29,10 @@
           "select": null
         }
       },
-      "image": {
+      "imageralph": {
         "type": "Image",
         "config": {
-          "label": "image",
+          "label": "imageralph",
           "constraint": {},
           "thumbnails": []
         }

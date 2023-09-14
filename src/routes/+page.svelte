@@ -1,34 +1,56 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Javascript-->
+<script>
+import { onMount} from 'svelte';
 
+let show = false
+let remove = false
+
+
+</script>
+
+<!--HTML -->
+<section>
+    <h1>You are about to enter the most dangerous prison in the World..</h1>
+    <h2>Do you want to continue?</h2>
+    <h2 class="message" class:show={show}>To late now!</h2>
+    <div class="button-container">
+        <button class="button-yes"><a href="/creators">Yes</a></button>
+        <button class="button-no" class:remove={remove} on:click={() => [show = !show, remove = !remove]}>No</button>
+    </div>
+</section>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
     /* CSS */
-    body {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'Grenze Gotisch', cursive;
-        background-image: url('src/assets/prison-image-zoom.jpeg');
-        background-color: rgba(255, 255, 255, 0.5);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
 
-    h1 {
+
+    section{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 50vh;
-        font-weight: bold;
-        font-size: 3.5rem;
+        width: 80%;
+        height: 40vh;
+        margin: 20vh auto 0 auto;
+    }
+
+    h1{
+        font-size: clamp(2rem, 2vw, 3rem);
         text-align: center;
+    }
+
+    .message{
+        opacity: 0;
+    }
+
+    .message.show {
+        opacity: 1;
+    }
+
+    .button-no.remove{
+        opacity: 0;
+        pointer-events: none;
     }
 
     .button-container {
@@ -53,21 +75,13 @@
         font-family: 'Grenze Gotisch', cursive;
         font-weight: bold;
         font-size: 1.3rem;
+        cursor: pointer;
     }
 </style>
-</head>
 
-<!--HTML -->
-<body>
-<section>
-    <h1>Do you want to continue?</h1>
-    <div class="button-container">
-        <button class="button-yes"><a href="/creators">Yes</a></button>
-        <button class="button-no"><a href="">No</a></button>
-    </div>
-</section>
-</body>
-</html>
+
+
+
 
 
 

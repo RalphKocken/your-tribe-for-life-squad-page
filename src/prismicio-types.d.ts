@@ -44,6 +44,17 @@ interface CreatorsDocumentData {
   image: prismic.ImageField<never>;
 
   /**
+   * image2 field in *creators*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: creators.image2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *creators*
    *
    * - **Field Type**: Slice Zone

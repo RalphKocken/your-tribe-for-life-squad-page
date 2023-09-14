@@ -9,8 +9,11 @@
     console.log(data.list)
 </script>
 
-<section>
+<section class="creators-section">
     <!-- //for each loop svelte syntax// -->
+    <div class="button-other-members-container">
+        <button class="button-other-members"><a href="/prisoners">Visit other prisoners</a></button>
+    </div>
 
     <div class="all-creators">
         {#each members as member }
@@ -21,9 +24,7 @@
         {/each}    
     </div>
 
-   <div class="button-other-members-container">
-       <button class="button-other-members"><a href="/prisoners">Visit other prisoners</a></button>
-   </div>
+
 
 </section>
 
@@ -32,6 +33,21 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+    .creators-section {
+        /*background-image: url('src/assets/background-dark-prison-cell.jpg');*/
+        /*background-size: contain;*/
+        /*background-repeat: no-repeat;*/
+        /*height: 60vh;*/
+        /*overflow: hidden;*/
+    }
+
+    .button-other-members-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
     a {
         text-decoration: none;
         color: black;
@@ -39,7 +55,7 @@
 
     .button-other-members {
         width: 10rem;
-        height: 2.5rem;
+        height: 2rem;
         background-color: #FD7A2C;
         border-radius: 5px;
         border: none;
@@ -52,10 +68,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        
+
     }
 
-    .creator-image{
-        height: 30vh;
+    .creator img {
+        /*width: 15rem;*/
+        width: 30vh;
     }
 
 </style>

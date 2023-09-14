@@ -5,7 +5,6 @@ import { onMount} from 'svelte';
 let show = false
 let remove = false
 
-
 </script>
 
 <!--HTML -->

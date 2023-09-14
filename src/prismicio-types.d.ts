@@ -33,15 +33,15 @@ interface CreatorsDocumentData {
   link: prismic.LinkField;
 
   /**
-   * imageralph field in *creators*
+   * image field in *creators*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: creators.imageralph
+   * - **API ID Path**: creators.image
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  imageralph: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *creators*

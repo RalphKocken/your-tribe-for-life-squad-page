@@ -63,9 +63,14 @@ let remove = false
     a {
         text-decoration: none;
         color: black;
+        width: 100%;
+        height: 100%;
     }
 
     .button-yes, .button-no {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 6rem;
         height: 2.5rem;
         background-color: #FD7A2C;

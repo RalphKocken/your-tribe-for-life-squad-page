@@ -22,7 +22,7 @@
     </div>
 
    <div class="button-other-members-container">
-       <button class="button-other-members"><a href="/prisoners">See other members</a></button>
+       <button class="button-other-members"><a href="/prisoners">Visit other prisoners</a></button>
    </div>
 
 </section>

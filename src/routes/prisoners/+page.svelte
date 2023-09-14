@@ -29,7 +29,11 @@
     <button on:click={previousPrisoner}>
         <img src="/arrow-left.svg" alt="button to move to previous prisoner">
     </button>
-    {@html prismic.asHTML(prisoners[index].data.name)}
+    <div class="prisoner">
+        <h2>
+            {@html prismic.asHTML(prisoners[index].data.name)}
+        </h2>
+    </div>
     <button on:click={nextPrisoner}>
         <img src="/arrow-right.svg" alt="button to move to next prisoner">
     </button>
@@ -44,5 +48,21 @@
         align-items: center;
         gap: 4rem;
         background-color: black;
+        background: url("./prisoncell.png");
+        background-size: cover;
+        background-position: center;
     }
+
+    h2{
+        width: 100px;
+        text-align: center;
+    }
+
+    button{
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
 </style>

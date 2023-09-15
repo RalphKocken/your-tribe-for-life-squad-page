@@ -37,14 +37,6 @@
           "thumbnails": []
         }
       },
-      "image2": {
-        "type": "Image",
-        "config": {
-          "label": "image2",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

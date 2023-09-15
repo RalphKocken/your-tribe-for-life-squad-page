@@ -32,6 +32,7 @@
     <div class="prisoner">
         <h2>
             {@html prismic.asHTML(prisoners[index].data.name)}
+            <img class="creator-image" src="{prisoners[index].data.image.url}" alt="prisoner"/>
         </h2>
     </div>
     <button on:click={nextPrisoner}>

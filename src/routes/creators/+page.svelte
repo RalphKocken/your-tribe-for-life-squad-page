@@ -34,11 +34,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
     .creators-section {
-        /*background-image: url('src/assets/background-dark-prison-cell.jpg');*/
-        /*background-size: contain;*/
-        /*background-repeat: no-repeat;*/
-        /*height: 60vh;*/
-        /*overflow: hidden;*/
+        background-image: url('src/assets/background-dark-prison-cell.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
     }
 
     .button-other-members-container{
@@ -66,13 +68,11 @@
     
     .all-creators{  
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: row;
         overflow-x: auto;
         white-space: nowrap;
-        
-
     }
 
     .creator img {

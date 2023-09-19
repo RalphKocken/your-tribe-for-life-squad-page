@@ -23,9 +23,6 @@
              </div>   
         {/each}    
     </div>
-
-
-
 </section>
 
 
@@ -41,6 +38,7 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
+
     }
 
     .button-other-members-container{
@@ -72,7 +70,11 @@
         align-items: center;
         flex-direction: row;
         overflow-x: auto;
+        text-align: center;
+        font-size: 2rem;
         white-space: nowrap;
+        margin-left: 2rem;
+        gap: 4rem;
     }
 
     .creator img {

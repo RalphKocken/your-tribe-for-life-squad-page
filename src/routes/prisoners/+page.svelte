@@ -5,6 +5,8 @@
 
   export let data;
 
+  // JAVA SCRIPT
+
   //MOVE PRISONERS FUNCTION//
   let prisoners = data.list;
   console.log(data.list);
@@ -25,14 +27,21 @@
   };
 </script>
 
+<!-- HTML -->
+
+
 <section>
+  <div class="button-return-container">
+    <button class="button-return"><a href="/creators">Return</a></button>
+  </div>
+
+
+  <div class="flex-container-prisoners">
+
   <h2>
     {@html prismic.asHTML(prisoners[index].data.name)}
   </h2>
 
-  <button on:click={previousPrisoner}>
-    <img src="/arrow-left.svg" alt="button to move to previous prisoner" />
-  </button>
 
   <div class="prisoner">
     <img
@@ -47,28 +56,62 @@
     />
   </div>
 
+  </div>
+
+  <button on:click={previousPrisoner}>
+    <img src="/arrow-left.svg" alt="button to move to previous prisoner" />
+  </button>
+
   <button on:click={nextPrisoner}>
     <img src="/arrow-right.svg" alt="button to move to next prisoner" />
   </button>
 </section>
 
+
+<!-- CSS -->
 <style>
+  h2 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
   section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     width: 100vw;
     height: 100vh;
     background: url("./prisoncell.png");
     background-size: cover;
     background-position: center;
+    overflow: hidden;
   }
 
-  h2 {
-    position: absolute;
-    text-align: center;
-    width: 100%;
+  .flex-container-prisoners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .button-return-container{
+
+
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .button-return {
+    width: 6rem;
+    height: 2rem;
+    background-color: #FD7A2C;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Grenze Gotisch', cursive;
+    font-weight: bold;
+    font-size: 1rem;
   }
 
   button {
@@ -80,13 +123,13 @@
   }
 
   .prisoner {
-    position: relative;
+    /*position: relative;*/
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vw;
-    height: 50vh;
+    /*width: 40vw;*/
+    /*height: 50vh;*/
   }
 
   .person-head {
@@ -98,4 +141,5 @@
   .person-body {
     width: 200px;
   }
+
 </style>

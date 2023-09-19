@@ -73,7 +73,7 @@
         text-align: center;
         font-size: 2rem;
         white-space: nowrap;
-        margin-left: 2rem;
+        padding-left: 2rem;
         gap: 4rem;
     }
 

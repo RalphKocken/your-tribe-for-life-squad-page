@@ -2,6 +2,7 @@
     import * as prismic from "@prismicio/client";
     import {SliceZone} from "@prismicio/svelte";
     import {components} from "$lib/slices";
+    import { onMount } from "svelte";
 
     export let data;
 
@@ -10,7 +11,6 @@
     //MOVE PRISONERS FUNCTION//
     let prisoners = data.list;
     console.log(data.list);
-    console.log(prisoners.length);
 
     let index = 0;
 
@@ -21,10 +21,35 @@
     const previousPrisoner = () => {
         if (index != 0) {
             index = (index - 1) % prisoners.length;
+            console.log(index)
         } else {
             index = prisoners.length - 1;
         }
     };
+
+    
+    onMount(() => {
+        console.log(prisoners[17])
+        window.addEventListener('click', () =>{
+            const personHead = document.querySelector(".prisoner")
+            const personImage = document.querySelector('.person-head')
+            let personValue = personHead.getAttribute("value")
+            console.log(personValue)
+                    if(personValue === 'danique'){
+                        personImage.style.marginTop = "60px"
+                    }else if(personValue === 'sanne'){
+                        personImage.style.marginTop = "20px"
+                    }else if (personValue === 'maaike'){
+                        personImage.style.marginTop = "40px"
+                    }else{
+                        personImage.style.marginTop = '0px'
+                    }
+    });
+    });
+
+
+
+
 </script>
 
 <!-- HTML -->
@@ -34,15 +59,12 @@
     <div class="button-return-container">
         <button class="button-return"><a href="/creators">Return</a></button>
     </div>
-
-      <h2>
-        {@html prismic.asHTML(prisoners[index].data.name)}
-      </h2>
-
-
+    <h2>
+    {@html prismic.asHTML(prisoners[index].data.name)}
+    </h2>
     <div class="flex-container-prisoners">
-
-        <div class="prisoner">
+        <a href="{ prisoners[index].data.link.url }">  
+        <div class="prisoner" value="{prisoners[index].uid}">
             <img
                     class="person-head"
                     src={prisoners[index].data.image.url}
@@ -54,9 +76,8 @@
                     alt="prisoner-body"
             />
         </div>
-
+        </a>
     </div>
-
     <div class="button-container-next-previous">
         <button on:click={previousPrisoner}>
             <img src="/arrow-left.svg" alt="button to move to previous prisoner"/>

@@ -17,10 +17,14 @@
 
     <div class="all-creators">
         {#each members as member }
+
+
+            <a href="{ member.data.link.url }">       
             <div class="creator">
                 {@html prismic.asHTML(member.data.name)}
                 <img class="creator-image" src="{member.data.image.url}" alt="prisoner"/>
-             </div>   
+             </div>
+             </a>   
         {/each}    
     </div>
 </section>

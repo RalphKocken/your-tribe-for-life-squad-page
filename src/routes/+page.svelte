@@ -79,6 +79,14 @@ let remove = false
         font-size: 1.3rem;
         cursor: pointer;
     }
+
+    /* MEDIA QUERY TABLET */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        h1{
+            font-size: clamp(3rem, 3vw, 4rem);
+        }
+    }
+
 </style>
 
 

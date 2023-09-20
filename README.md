@@ -1,5 +1,6 @@
 # SquadPage - Prision FDND
 
+![image](https://github.com/RalphKocken/your-tribe-for-life-squad-page/assets/112861375/f5fd65fb-c5f6-4d41-96cd-887b674380f2)
 
 
 Dit project omvat een overzichtspagina van squad A dat gemaakt is met `SvelteKit`. De getoonde data op deze squadpage is afkomstig vanuit een headless CMS genaamd `prismic.io`.

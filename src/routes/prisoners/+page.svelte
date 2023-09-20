@@ -59,9 +59,12 @@
     <div class="button-return-container">
         <button class="button-return"><a href="/creators">Return</a></button>
     </div>
+
     <h2>
-    {@html prismic.asHTML(prisoners[index].data.name)}
+        {@html prismic.asHTML(prisoners[index].data.name)}
     </h2>
+
+
     <div class="flex-container-prisoners">
         <a href="{ prisoners[index].data.link.url }">  
         <div class="prisoner" value="{prisoners[index].uid}">
@@ -92,6 +95,8 @@
 
 <!-- CSS -->
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
     h2 {
         position: absolute;
         text-align: center;
@@ -159,8 +164,7 @@
     .person-body {
         position: absolute;
         width: 350px;
-        top: 35vh;
-
+        top: 35vh
     }
 
     .button-container-next-previous {
@@ -169,11 +173,58 @@
         left: 20vh;
     }
 
-    .button-container-next-previous button  {
+    .button-container-next-previous button {
         text-decoration: none;
         background-color: transparent;
         border: none;
         outline: none;
+    }
+
+    /* MEDIA QUERY TABLET */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        .person-head {
+            width: 300px;
+            top: 25vh;
+        }
+
+        .person-body {
+            width: 550px;
+            top: 33vh
+        }
+
+        .button-container-next-previous {
+            left: 32vh;
+        }
+    }
+
+    /* MEDIA QUERY DESKTOP */
+    @media screen and (min-width: 1025px) {
+
+        h2 {
+            font-size: 4rem;
+            
+        }
+
+        .person-head {
+            width: 400px;
+            top: 15vh;
+        }
+
+        .person-body {
+            width: 850px;
+            top: 23vh
+        }
+
+        .button-container-next-previous {
+            left: 86.5vh;
+            padding-top: 3rem;
+        }
+
     }
 
 </style>

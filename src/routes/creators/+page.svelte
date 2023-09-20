@@ -1,9 +1,9 @@
 <script xmlns="http://www.w3.org/1999/html">
     import * as prismic from '@prismicio/client'
-    import { PrismicImage } from "@prismicio/svelte"
+    import {PrismicImage} from "@prismicio/svelte"
     import {SliceZone} from '@prismicio/svelte'
     import {components} from '$lib/slices'
-    
+
     export let data
     let members = data.list
     console.log(data.list)
@@ -20,11 +20,10 @@
             <div class="creator">
                 {@html prismic.asHTML(member.data.name)}
                 <img class="creator-image" src="{member.data.image.url}" alt="prisoner"/>
-             </div>   
-        {/each}    
+            </div>
+        {/each}
     </div>
 </section>
-
 
 
 <style>
@@ -38,10 +37,9 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
-
     }
 
-    .button-other-members-container{
+    .button-other-members-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -63,8 +61,8 @@
         font-weight: bold;
         font-size: 1rem;
     }
-    
-    .all-creators{  
+
+    .all-creators {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -80,6 +78,27 @@
     .creator img {
         /*width: 15rem;*/
         width: 30vh;
+    }
+
+    /* MEDIA QUERY TABLET */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .all-creators {
+            font-size: 3rem;
+        }
+    }
+
+    /* MEDIA QUERY DESKTOP */
+    @media screen and (min-width: 1025px) {
+        .all-creators {
+            justify-content: center;
+            font-size: 4rem;
+            margin-top: 10rem;
+        }
+
+        .creator {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 
 </style>

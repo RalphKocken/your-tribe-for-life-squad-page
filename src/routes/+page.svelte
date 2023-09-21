@@ -27,9 +27,11 @@ let remove = false
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 80%;
-        height: 40vh;
-        margin: 20vh auto 0 auto;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('/src/assets/prison-image-zoom.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     h1{
@@ -55,7 +57,6 @@ let remove = false
         align-items: flex-end;
         justify-content: center;
         gap: 3rem;
-        height: 30vh;
     }
 
     a {

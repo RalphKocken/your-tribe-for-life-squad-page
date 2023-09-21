@@ -108,7 +108,7 @@
     section {
         width: 100vw;
         height: 100vh;
-        background: url("./src/assets/prisoncell.png");
+        background: url("/src/assets/prisoncell.png");
         background-size: cover;
         background-position: center;
         overflow: hidden;

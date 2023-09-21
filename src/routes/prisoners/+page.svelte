@@ -36,11 +36,17 @@
             let personValue = personHead.getAttribute("value")
             console.log(personValue)
                     if(personValue === 'danique'){
-                        personImage.style.marginTop = "60px"
+                        personImage.style.marginTop = "100px"
                     }else if(personValue === 'sanne'){
-                        personImage.style.marginTop = "20px"
+                        personImage.style.marginTop = "30px"
                     }else if (personValue === 'maaike'){
                         personImage.style.marginTop = "40px"
+                        personImage.style.marginRight = "40px"
+                    }else if (personValue === 'eliza'){
+                        personImage.style.marginLeft = "30px"
+                    }else if (personValue === 'wesley'){
+                        personImage.style.marginTop = "20px"
+                        personImage.style.marginLeft = "43px"
                     }else{
                         personImage.style.marginTop = '0px'
                     }
@@ -130,24 +136,12 @@
         font-weight: bold;
         font-size: 1rem;
     }
-
-    .flex-container-prisoners {
-        /*display: flex;*/
-        /*flex-direction: row;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
-        /*gap: 10rem;*/
-        /*position: relative;*/
-    }
-
+    
     .prisoner {
-        /*position: relative;*/
         flex-direction: column;
         display: flex;
         justify-content: center;
         align-items: center;
-        /*width: 40vw;*/
-        /*height: 50vh;*/
     }
 
     .person-head {
@@ -208,16 +202,16 @@
 
         .person-head {
             width: 400px;
-            top: 15vh;
+            top: 20vh;
         }
 
         .person-body {
-            width: 850px;
-            top: 23vh
+            width: 750px;
+            top: 28vh
         }
 
         .button-container-next-previous {
-            left: 86.5vh;
+            left: 93vh;
             padding-top: 3rem;
         }
 

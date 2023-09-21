@@ -32,7 +32,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
     .creators-section {
-        background-image: url('./src/assets/background-dark-prison-cell.jpg');
+        background-image: url('/src/assets/background-dark-prison-cell.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

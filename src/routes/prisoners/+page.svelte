@@ -38,20 +38,34 @@
                     if(personValue === 'danique'){
                         personImage.style.marginTop = "100px"
                     }else if(personValue === 'sanne'){
-                        personImage.style.marginTop = "30px"
+                        personImage.style.marginTop = "50px"
                     }else if (personValue === 'maaike'){
-                        personImage.style.marginTop = "40px"
-                        personImage.style.marginRight = "40px"
-                    }else if (personValue === 'eliza'){
-                        personImage.style.marginLeft = "30px"
+                        personImage.style.marginTop = "50px"
+                        personImage.style.marginLeft = "10px"
                     }else if (personValue === 'wesley'){
-                        personImage.style.marginTop = "20px"
+                        personImage.style.marginTop = "30px"
+                        personImage.style.marginLeft = "30px"
+                    }else if (personValue === 'eliza'){
+                        personImage.style.marginTop = "25px"
                         personImage.style.marginLeft = "43px"
+                    }else if (personValue === 'celine'){
+                        personImage.style.marginTop = "25px"
+                        personImage.style.marginLeft = "13px"
+                    }else if (personValue === 'anouk'){
+                        personImage.style.marginTop = "25px"
+                        personImage.style.marginLeft = "43px"
+                    }else if (personValue === 'duneya'){
+                        personImage.style.marginTop = "100px"
+                        personImage.style.marginLeft = "15px"
+                    }else if (personValue === 'demi'){
+                        personImage.style.marginTop = "25px"
+                        personImage.style.marginLeft = "10px"
                     }else{
-                        personImage.style.marginTop = '0px'
+                        personImage.style.margin = '0px'
                     }
-    });
-    });
+                });
+            });
+
 </script>
 
 <!-- HTML -->
@@ -64,33 +78,35 @@
 
     <h2>
         {@html prismic.asHTML(prisoners[index].data.name)}
+        <a href="{ prisoners[index].data.link.url }" class="profile-link"> 
+            Visit Profile
+        </a> 
     </h2>
-
-
+    
+    
     <div class="flex-container-prisoners">
-        <a href="{ prisoners[index].data.link.url }">  
-        <div class="prisoner" value="{prisoners[index].uid}">
-            <img
-                    class="person-head"
-                    src={prisoners[index].data.image.url}
-                    alt="prisoner"
-            />
-            <img
-                    class="person-body"
-                    src="./person-prison-body.png"
-                    alt="prisoner-body"
-            />
-        </div>
-        </a>
-    </div>
-    <div class="button-container-next-previous">
-        <button on:click={previousPrisoner}>
+        
+        <button on:click={previousPrisoner} class="previous-button">
             <img src="/arrow-left.svg" alt="button to move to previous prisoner"/>
         </button>
 
-        <button on:click={nextPrisoner}>
+            <div class="prisoner" value="{prisoners[index].uid}">
+                <img
+                        class="person-head"
+                        src={prisoners[index].data.image.url}
+                        alt="prisoner"
+                />
+                <img
+                        class="person-body"
+                        src="./person-prison-body.png"
+                        alt="prisoner-body"
+                />
+            </div>
+
+        <button on:click={nextPrisoner} class="next-button">
             <img src="/arrow-right.svg" alt="button to move to next prisoner"/>
         </button>
+
     </div>
 </section>
 
@@ -99,13 +115,8 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-    h2 {
-        position: absolute;
-        text-align: center;
-        width: 100%;
-    }
-
     section {
+        position: relative;
         width: 100vw;
         height: 100vh;
         background: url("/src/assets/prisoncell.png");
@@ -114,105 +125,118 @@
         overflow: hidden;
     }
 
-    .button-return-container {
+    h2{
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding-top: 1rem;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 2rem;
+        text-align: center;
+        z-index: 1000;
     }
-
-    a {
+    
+    a {        
         text-decoration: none;
         color: black;
     }
+    
+    .profile-link{
+        background-color: #FD7A2C;
+        padding: 0.5rem;    
+        border-radius: 5px;
+        font-size: 1rem;
+        z-index: 1000;
+    }
+    
+    .button-return-container {
+        position: absolute;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+    }
 
     .button-return {
-        width: 6rem;
-        height: 2rem;
-        background-color: #FD7A2C;
         border-radius: 5px;
         border: none;
         font-family: 'Grenze Gotisch', cursive;
         font-weight: bold;
         font-size: 1rem;
+        z-index: 100;
+        margin: 0 1vw 0 0;
+    }
+
+    .flex-container-prisoners{
+        width: fit-content;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .flex-container-prisoners button{
+        cursor: pointer;
     }
     
     .prisoner {
-        flex-direction: column;
+        position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
     }
 
     .person-head {
         position: absolute;
-        width: 220px;
-        top: 25vh;
+        top: -120px;
+        width: 280px;
         z-index: 10;
+        margin: 1rem;
     }
 
     .person-body {
-        position: absolute;
-        width: 350px;
-        top: 35vh
+        width: 250px;
+        margin: 0 auto;
     }
 
-    .button-container-next-previous {
-        position: absolute;
-        top: 85vh;
-        left: 20vh;
-    }
-
-    .button-container-next-previous button {
-        text-decoration: none;
+    button{
         background-color: transparent;
         border: none;
-        outline: none;
+        z-index: 100;
     }
 
-    /* MEDIA QUERY TABLET */
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    button img{
+        width: clamp(1rem, 4vw, 3rem);
+    }
 
-        h2 {
-            font-size: 3rem;
-        }
+
+    /* MEDIA QUERY TABLET */
+    @media screen and (min-width: 768px){
 
         .person-head {
-            width: 300px;
-            top: 25vh;
+            top: -175px;
+            width: 350px;
         }
 
         .person-body {
-            width: 550px;
-            top: 33vh
-        }
-
-        .button-container-next-previous {
-            left: 32vh;
+            width: 300px;
         }
     }
 
     /* MEDIA QUERY DESKTOP */
     @media screen and (min-width: 1025px) {
-
-        h2 {
-            font-size: 4rem;
-            
+        .flex-container-prisoners{
+            bottom: 5vh;
         }
 
         .person-head {
-            width: 400px;
-            top: 20vh;
+            width: 380px;
         }
 
         .person-body {
-            width: 750px;
-            top: 28vh
-        }
-
-        .button-container-next-previous {
-            left: 93vh;
-            padding-top: 3rem;
+            width: 350px;
         }
 
     }

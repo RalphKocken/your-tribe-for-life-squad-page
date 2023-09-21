@@ -49,6 +49,7 @@
     }
 
     a {
+        position: relative;
         text-decoration: none;
         color: black;
     }
@@ -79,7 +80,7 @@
 
     .creator img {
         /*width: 15rem;*/
-        width: 30vh;
+        width: 25vh;
     }
 
     /* MEDIA QUERY TABLET */
